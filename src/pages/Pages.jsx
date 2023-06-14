@@ -1,11 +1,17 @@
 import React from 'react'
-import Home from './Home'
+import Home from './Home/Home'
+import Cuisine from './Cuisine/Cuisine'
+import {
+  Routes,
+  Route
+} from 'react-router-dom'
 
 const Pages = () => {
   return (
-    <div>
-        <Home />
-    </div>
+    <Routes>
+      <Route path="/" element={ <Home /> } />
+      <Route path="/cuisine" element={ <Cuisine /> } />
+    </Routes>
   )
 }
 

@@ -20,7 +20,7 @@ const Popular = () => {
             const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`)
             const data = await api.json()
             localStorage.setItem("popular", JSON.stringify(data.recipes))        
-            setPopular(data.recipes)
+            
         }
     }
 
@@ -30,11 +30,11 @@ const Popular = () => {
             <h3>Popular Picks</h3>
             <Splide
                 options={{
-                    perPage: 4,
+                    perPage: 5,
                     arrows: false,
                     pagination: false,
                     drag: "free",
-                    gap: "5rem",
+                    gap: "3rem",
                 }}
             >
                 {

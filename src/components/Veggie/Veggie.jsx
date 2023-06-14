@@ -32,20 +32,20 @@ const Veggie = () => {
             <h3>Our Vegetariam Picks</h3>
             <Splide
                 options={{
-                    perPage: 3,
+                    perPage: 5,
                     arrows: false,
                     pagination: false,
                     drag: "free",
-                    gap: "2rem",
+                    gap: "3rem",
                 }}
             >
                 {
                     veggie.map((recipe) => {
                         return (
-                            <SplideSlide>
+                            <SplideSlide key={recipe.id}>
                                 <Card>
                                     <p>{recipe.title}</p>
-                                    <img src={recipe.image} alt="" />
+                                    <img src={recipe.image} alt={recipe.title} />
                                     <Gradient />
                                 </Card>
                             </SplideSlide>

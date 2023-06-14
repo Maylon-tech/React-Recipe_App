@@ -1,17 +1,16 @@
 
-
+import { BrowserRouter as Router } from 'react-router-dom'
 import GlobalStyles from './GlobalStyles'
 import Pages from './pages/Pages'
+import Category from './components/Categories/Category'
 
 const App = () => {
   return (
-    <div className="App">
+    <Router>
       <GlobalStyles />
-      <header className="App-header">
-       Recipes API here
-      </header>
+      <Category />
       <Pages />
-    </div>
+    </Router>
   )
 }
 
