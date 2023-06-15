@@ -16,8 +16,7 @@ const Cuisine = () => {
 
   useEffect(() => {
     getCuisine(params.type)
-    console.log(params.type)
-  }, [params.type])
+  }, [params.type])     // Referente ao ID em Route /:type..
 
   return (
     <Grid>

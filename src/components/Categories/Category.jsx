@@ -29,7 +29,7 @@ const Category = () => {
         </NavLink>
 
         <NavLink
-            to={"/cuisineJapanese/"}
+            to={"/cuisine/Japanese"}
         >
             <GiChopsticks />
             <h4>Japanese</h4>
