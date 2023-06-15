@@ -41,11 +41,24 @@ const Recipe = () => {
           Ingredients
         </Button>
 
+        {
+          activeTab === "instructions" && (
+            <div>
+              <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
+              <h2 dangerouslySetInnerHTML={{ __html: details.instructions }}></h2>
+            </div>
+        )}
+
+        {
+          activeTab === "ingredients" && (
+            <ul>
+              <li>balbalbalblab</li>
+              <li>balblbalba</li>
+            </ul>
+          )
+        }
       </Info>
 
-      <div>
-        <h3 dangerouslySetInnerHTML={{ __html: details.summary}}></h3>
-      </div>
 
     </DetailWrapper>
   )

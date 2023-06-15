@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const FormStyle = styled.form`
-  margin: 0 20rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  
   
   > div {
     position: relative;

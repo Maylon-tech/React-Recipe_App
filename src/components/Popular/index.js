@@ -2,6 +2,13 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   margin: 4rem 0;
+
+  > h3 {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #333;
+  }
 `
 
 export const Card = styled.div`
@@ -43,4 +50,27 @@ export const Gradient = styled.div`
     width: 100%;
     height: 100%;
     background: linear-gradient()rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5);
+`
+
+export const Arrows = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+`
+export const LeftArrow = styled.div`
+  padding: 1rem;
+
+  svg {
+    font-size: 2rem;
+    color: #444;
+  }
+`
+
+export const RightArrow = styled.div`
+  padding: 1rem;
+
+  svg {
+    font-size: 2rem;
+    color: #444;
+  }
 `
