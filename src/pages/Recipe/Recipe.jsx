@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Button, DetailWrapper, Info, LeftContent } from './index'
+import { Button, ButtonContainer, DetailWrapper, Info, InfoContent, LeftContent, ListIngredient } from './index'
 
 
 const Recipe = () => {
@@ -21,42 +21,57 @@ const Recipe = () => {
 
   return (
     <DetailWrapper>
+
       <LeftContent>
         <h2>{details.title}</h2>
-        <img src={details.image} alt="" />
+        <div>
+         <img src={details.image} alt="" />
+        </div>
       </LeftContent>
+
       <Info>
 
-        <Button 
-          className={activeTab === 'instructions'? 'active' : ''}
-          onClick={() => setActiveTab("instructions")}
-        >
-          Instructions
-        </Button>
+        <ButtonContainer>
+          <Button 
+            className={activeTab === 'instructions'? 'active' : ''}
+            onClick={() => setActiveTab("instructions")}
+          >
+            Instructions
+          </Button>
 
-        <Button 
-          className={activeTab === 'ingredients'? 'active' : ''}
-          onClick={() => setActiveTab("ingredients")}
-        >
-          Ingredients
-        </Button>
+          <Button 
+            className={activeTab === 'ingredients'? 'active' : ''}
+            onClick={() => setActiveTab("ingredients")}
+          >
+            Ingredients
+          </Button>
+        </ButtonContainer>
 
-        {
-          activeTab === "instructions" && (
-            <div>
-              <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
-              <h2 dangerouslySetInnerHTML={{ __html: details.instructions }}></h2>
-            </div>
-        )}
+        <InfoContent>
+          {
+            activeTab === "instructions" && (
+              <div className='instruction'>
+                <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
+                <h2 dangerouslySetInnerHTML={{ __html: details.instructions }}></h2>
+              </div>
+          )}
 
-        {
-          activeTab === "ingredients" && (
-            <ul>
-              <li>balbalbalblab</li>
-              <li>balblbalba</li>
-            </ul>
-          )
-        }
+          {
+            activeTab === "ingredients" && (
+              <ListIngredient>
+                {
+                  details.extendedIngredients.map((ingredient) => {
+                    return (
+                      <li key={ingredient.id}>
+                        {ingredient.original}
+                      </li>
+                    )
+                  })
+                }
+              </ListIngredient>
+            )
+          }
+        </InfoContent>
       </Info>
 
 

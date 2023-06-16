@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import { Link, useParams} from 'react-router-dom'
 import { Card, Grid } from '.'
 
@@ -19,7 +18,12 @@ const Cuisine = () => {
   }, [params.type])     // Referente ao ID em Route /:type..
 
   return (
-    <Grid>
+    <Grid
+      animate={{ opacity: 0}}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {
         cuisine.map((item) => {
           return (
